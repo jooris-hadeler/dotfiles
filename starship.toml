@@ -1,0 +1,35 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """$username at $hostname in $directory$git_branch$rust$status\n\\$ """
+add_newline = true
+
+[username]
+format = "[$user]($style)"
+style_user = "bold fg:#ff79c6"
+show_always = true
+
+[hostname]
+format = "[$hostname]($style)"
+ssh_only = false
+style = "bold fg:#f1fa8c"
+
+[directory]
+format = "[$path]($style)"
+style = "bold fg:#8be9fd"
+truncation_length = 3
+truncate_to_repo = false
+
+[git_branch]
+format = " on [$symbol$branch]($style)"
+symbol = "git:"
+style = "bold fg:#6272a4"
+
+[rust]
+format = " rust [$version]($style)"
+style = "bold fg:#ff79c6"
+
+[status]
+format = " exited [$status]($style)"
+style = "bold fg:#ff6e6e"
+disabled = false
+recognize_signal_code = true
